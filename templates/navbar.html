@@ -1,6 +1,6 @@
 {% load static %}
 
-<nav class="navbar navb navbar-expand-md navbar-dark bg-dark" >
+<nav class="navbar navb navbar-expand-md navbar-dark bg-dark mb-4" >
         <a class="navbar-brand" href="{% url 'home' %}">
             <img src="{% static 'img/automat.png' %}" width="40" height="30" alt= "Logo"/>
         </a>
@@ -46,7 +46,7 @@
 
                 <a class="btn btn-outline-success btn-sm"
 {#                   href="{% url 'django_registration_register' %}"#}
-                        href="#"
+                        href="konta/register"
                    type="submit">Rejestracja
                 </a>
                 {% endif %}

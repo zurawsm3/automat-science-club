@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+{% load i18n %}
+{% load crispy_forms_filters %}
+
+{% block content %}
+  <div class="container" >
+    <div class="row justify-content-center">
+      <h1>Rejestracja</h1>
+    </div>
+    <div class="row justify-content-center">
+      <form action="/dzien-dobry" method="post">
+        {% csrf_token %}
+        {{ form|crispy }}
+        <input class='btn btn-block btn-outline-success' type="submit" value="Dołącz do nas!">
+      </form>
+    </div>
+  </div>
+
+  <hr/>
+  <div class='row'>
+    <div class='col-sm-6 col-sm-offset-3 text-align-center'>
+{#    <p>Chcesz się <a href="{% url 'auth_login' %}">Zalogować</a>?</p>#}
+    </div>
+  </div>
+
+  <div class='row justify-content-center'>
+    <p>Masz już konto? <a href="#">Chcesz się zalogować?</a></p>
+  </div>
+{% endblock %}
