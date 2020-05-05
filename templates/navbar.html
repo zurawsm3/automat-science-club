@@ -1,0 +1,63 @@
+{% load static %}
+
+<nav class="navbar navb navbar-expand-md navbar-dark bg-dark" >
+        <a class="navbar-brand" href="{% url 'home' %}">
+            <img src="{% static 'img/automat.png' %}" width="40" height="30" alt= "Logo"/>
+        </a>
+        <button class="navbar-toggler " type="button" data-toggle="collapse" data-target="#navbarCollapse"
+                aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="{% url 'home' %}">Strona startowa</a>
+                </li>
+                <li class="nav-item">
+{#                    <a class="nav-link" href="{% url 'about' %}">Poznaj nas</a>#}
+                    <a class="nav-link" href="#">Poznaj nas</a>
+                </li>
+                <li class="nav-item">
+{#                    <a class="nav-link" href="{% url 'contact' %}">Kontakt</a>#}
+                                        <a class="nav-link" href="#">Kontakt</a>
+                </li>
+{#                {% if request.user.is_authenticated %}#}
+{#                <li class="nav-item">#}
+{#                    <a class="nav-link" href="{% url 'recrutation' %}"><u>Rekrutacja</u></a>#}
+{#                </li>#}
+{#                {% endif %}#}
+{#                            {% if request.user.is_authenticated %}#}
+{#                    <li><a href="{% url 'auth_logout' %}">Wylogowanie</a></li>#}
+{#                {% else %}#}
+{#                    <li><a href="{% url 'registration_register' %}">Rejestracja</a></li>#}
+{#                {% endif %}#}
+            </ul>
+
+            <form class="form-inline">
+                {% if not request.get_full_path == "/accounts/register/"%}
+
+                    <div class="form-group" >
+                        <input  class="form-control form-control-sm col-sm-4 mr-1 ml-auto" type="text" placeholder="Użytkownik" aria-label="Username">
+                        <input class="form-control form-control-sm col-sm-4" type="text" placeholder="Hasło" aria-label="Password">
+                    </div>
+    {#                <input class="form-control-sm mr-sm-2 col-sm-3" type="text" placeholder="Hasło" aria-label="Password">#}
+
+                <button class="btn btn-sm btn-outline-info ml-1 mr-4" type="submit">Zaloguj się</button>
+
+                <a class="btn btn-outline-success btn-sm"
+{#                   href="{% url 'django_registration_register' %}"#}
+                        href="#"
+                   type="submit">Rejestracja
+                </a>
+                {% endif %}
+            </form>
+        </div>
+
+</nav>
+
+
+
+
+
+
+

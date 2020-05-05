@@ -1,0 +1,24 @@
+{% load static %}
+<!doctype html>
+<html lang="pl">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="icon" href="{%  static 'favicon/favicon.ico' %}">
+
+    <title>KNA</title>
+
+    {% include 'head_css.html' %}
+  </head>
+
+  <body>
+    {% include 'navbar.html' %}
+
+    {% block jumbotron %}
+    {% endblock %}
+
+    {% include 'bootstrap_js.html' %}
+  </body>
+</html>
