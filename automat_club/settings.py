@@ -40,6 +40,8 @@ INSTALLED_APPS = [
     # Third-party apps
     'django_registration',
     'crispy_forms',
+    # My apps
+    'auth_members',
 ]
 
 MIDDLEWARE = [
@@ -132,3 +134,10 @@ ACCOUNT_ACTIVATION_DAYS = 7
 
 # crispy-forms
 CRISPY_TEMPLATE_PACK = 'bootstrap4'
+
+# Configure EMAIL
+EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_HOST_USER = 'mokertych@gmail.com'
+EMAIL_HOST_PASSWORD = 'lolo45$o'
+EMAIL_PORT = 587
+EMAIL_USE_TLS = True

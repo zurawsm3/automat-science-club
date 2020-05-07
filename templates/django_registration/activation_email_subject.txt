@@ -1,0 +1,1 @@
+Aktywacja konta {{ user }} na {{ site }}

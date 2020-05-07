@@ -1,0 +1,10 @@
+Cześć {{ user }},
+
+kliknij w poniższy link, w celu weryfikacji konta
+
+{{ scheme }}://{{ site }}{% url 'django_registration_activate' activation_key %}
+
+Powyższy link jest ważny przez {{ expiration_days }} dni.
+
+Z poważaniem,
+Koło Naukowe Automat
