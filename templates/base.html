@@ -6,25 +6,20 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="">
     <meta name="author" content="">
+
     <link rel="icon" href="{%  static 'favicon/favicon.ico' %}">
 
     <title>KNA</title>
-        <link href="https://fonts.googleapis.com/css2?family=Patrick+Hand+SC&display=swap" rel="stylesheet">
+
+    <link href="https://fonts.googleapis.com/css2?family=Patrick+Hand+SC&display=swap" rel="stylesheet">
+
     {% include 'head_css.html' %}
   </head>
-
   <body>
     {% include 'navbar.html' %}
-    {% if request.user %}
-        <h1>request</h1>
-    {% endif %}
-    {{ request.user.is_active }}
 
-    {% block jumbotron %}
-    {% endblock %}
+    {% block jumbotron %}{% endblock %}
 
-    {% block content %}
-    {% endblock %}
-
+    {% block content %}{% endblock %}
   </body>
 </html>

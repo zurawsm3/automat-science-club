@@ -141,3 +141,7 @@ EMAIL_HOST_USER = 'mokertych@gmail.com'
 EMAIL_HOST_PASSWORD = 'lolo45$o'
 EMAIL_PORT = 587
 EMAIL_USE_TLS = True
+
+# next
+LOGIN_REDIRECT_URL = '/konta/zalogowano'
+LOGOUT_REDIRECT_URL = '/konta/logout'

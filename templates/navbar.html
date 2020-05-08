@@ -1,6 +1,11 @@
 {% load static %}
 
-<nav class="navbar navb navbar-expand-md navbar-dark bg-dark mb-4" >
+{% if request.user.is_authenticated  or "/konta/login" in request.get_full_path%}
+<nav class="navbar navb navbar-expand-sm navbar-dark bg-dark mb-4" >
+{% else %}
+<nav class="navbar navb navbar-expand-lg navbar-dark bg-dark mb-4" >
+{% endif %}
+    <div class="container">
         <a class="navbar-brand" href="{% url 'home' %}">
             <img src="{% static 'img/automat.png' %}" width="40" height="30" alt= "Logo"/>
         </a>
@@ -16,7 +21,7 @@
                 </li>
                 <li class="nav-item">
 {#                    <a class="nav-link" href="{% url 'contact' %}">Kontakt</a>#}
-                                        <a class="nav-link" href="#">Kontakt</a>
+                    <a class="nav-link" href="#">Kontakt</a>
                 </li>
 {#                {% if request.user.is_authenticated %}#}
 {#                <li class="nav-item">#}
@@ -30,24 +35,26 @@
 {#                {% endif %}#}
             </ul>
 
-             {% if not request.user.is_authenticated %}
-                <form class="form-inline">
-                    <div class="form-group" >
-                        <input  class="form-control form-control-sm col-sm-4 mr-1 ml-auto" type="text" placeholder="Użytkownik" aria-label="Username">
-                        <input class="form-control form-control-sm col-sm-4" type="text" placeholder="Hasło" aria-label="Password">
-                    </div>
-
-                    <button class="btn btn-sm btn-outline-info ml-1 mr-4" type="submit">Zaloguj się</button>
-
-                    <a class="btn btn-outline-success btn-sm"
-                       href="{% url 'django_registration_register' %}"
-                       type="submit">Rejestracja
-                    </a>
-
-                </form>
-             {% endif %}
+            {% if request.user.is_authenticated %}
+                <li><a class="btn btn-outline-info btn-sm" href="{% url 'logout' %}">Wyloguj mnie</a></li>
+            {% else %}
+                {% if not "/konta/login" in request.get_full_path%}
+                    <form class="form-inline" action="{% url 'login' %}" method="post">
+                        {% csrf_token %}
+                        <div class="form-group" >
+                            <input  class="form-control form-control-sm mr-1 ml-auto" name=username type="text" placeholder="Użytkownik" aria-label="Username">
+                            <input class="form-control form-control-sm" name=password type="password" placeholder="Hasło" aria-label="Password">
+                        </div>
+                        <button class="btn btn-sm btn-outline-info ml-1 mr-4" type="submit">Zaloguj się</button>
+                    </form>
+                {% endif %}
+                <a class="btn btn-outline-success btn-sm"
+                   href="{% url 'django_registration_register' %}"
+                   type="submit">Rejestracja
+                </a>
+            {% endif %}
         </div>
-
+    </div>
 </nav>
 
 

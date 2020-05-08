@@ -1,13 +1,9 @@
 from django.shortcuts import render
 
-# Create your views here.
-from django_registration.views import RegistrationView
 
-from django_registration.forms import RegistrationForm
+def logout(request):
+    return render(request, 'registration/logged_out.html')
 
 
-class Myview(RegistrationView):
-    # if RegistrationForm()
-    def register(self, form):
-        print("FFFFFFF")
-        return super().register(form)
+def logged(request):
+    return render(request, 'registration/logged.html')

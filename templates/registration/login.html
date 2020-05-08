@@ -4,12 +4,13 @@
 
 
 {% block content %}
+  <link href="{% static 'css/login.css' %}" rel="stylesheet">
   <div class="container" >
     <div class="row justify-content-center mb-2">
       <h1>Logowanie</h1>
     </div>
     <div class="row justify-content-center">
-      <form action="{% url 'django_registration_register' %}" method="post">
+      <form action="{% url 'login' %}" method="post">
         {% csrf_token %}
         {{ form|crispy }}
         <input class='btn btn-block btn-outline-info' type="submit" value="Zaloguj mnie">
@@ -27,6 +28,6 @@
 
   <div class='row justify-content-center'>
 
-    <p>Nie masz konta? <a href="#">Chcesz się zarejestrować?</a></p>
+    <p>Nie masz konta? <a href="/konta/register">Chcesz się zarejestrować?</a></p>
   </div>
 {% endblock %}
