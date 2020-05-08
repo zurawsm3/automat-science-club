@@ -15,7 +15,10 @@
 
   <body>
     {% include 'navbar.html' %}
-    {{ user.is_active }}
+    {% if request.user %}
+        <h1>request</h1>
+    {% endif %}
+    {{ request.user.is_active }}
 
     {% block jumbotron %}
     {% endblock %}
