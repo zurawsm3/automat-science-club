@@ -7,3 +7,9 @@ h1,h2,h3,h4,h5,h6 {
     font-family: 'Patrick Hand SC', cursive;
 }
 
+.jumbotron {
+  padding: 1rem 1rem;
+}
+.i {
+    color: #28a745;
+}
