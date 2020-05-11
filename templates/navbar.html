@@ -9,18 +9,16 @@
         <a class="navbar-brand" href="{% url 'home' %}">
             <img src="{% static 'img/automat.png' %}" width="40" height="30" alt= "Logo"/>
         </a>
-        <button class="navbar-toggler " type="button" data-toggle="collapse" data-target="#navbarCollapse"
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse"
                 aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav mr-auto">
                 <li class="nav-item active">
-{#                    <a class="nav-link" href="{% url 'about' %}">Poznaj nas</a>#}
-                    <a class="nav-link" href="/o-nas">Poznaj nas</a>
+                    <a class="nav-link" href="/o-nas">Poznaj nas <span class="sr-only">(current)</span></a>
                 </li>
                 <li class="nav-item active">
-{#                    <a class="nav-link" href="{% url 'contact' %}">Kontakt</a>#}
                     <a class="nav-link" href="/kontakt/">Kontakt</a>
                 </li>
                 {% if request.user.is_authenticated %}
@@ -31,13 +29,7 @@
                     <a class="nav-link" href="/rekrutacja/"><u>Rekrutacja</u></a>
                 </li>
                 {% endif %}
-{#                            {% if request.user.is_authenticated %}#}
-{#                    <li><a href="{% url 'auth_logout' %}">Wylogowanie</a></li>#}
-{#                {% else %}#}
-{#                    <li><a href="{% url 'registration_register' %}">Rejestracja</a></li>#}
-{#                {% endif %}#}
             </ul>
-
             {% if request.user.is_authenticated %}
                 <li><a class="btn btn-outline-info btn-sm" href="{% url 'logout' %}">Wyloguj mnie</a></li>
             {% else %}
@@ -45,13 +37,15 @@
                     <form class="form-inline" action="{% url 'login' %}" method="post">
                         {% csrf_token %}
                         <div class="form-group" >
-                            <input  class="form-control form-control-sm mr-1 ml-auto" name=username type="text" placeholder="Użytkownik" aria-label="Username">
-                            <input class="form-control form-control-sm" name=password type="password" placeholder="Hasło" aria-label="Password">
+                            <input  class="form-control form-control-sm mr-1 ml-auto" name=username type="text"
+                                    placeholder="Użytkownik" aria-label="Username">
+                            <input class="form-control form-control-sm" name=password type="password"
+                                   placeholder="Hasło" aria-label="Password">
                         </div>
-                        <button class="btn btn-sm btn-outline-info ml-1 mr-4" type="submit">Zaloguj się</button>
+                        <button class="btn btn btn-outline-info ml-1 mr-4" type="submit">Zaloguj się</button>
                     </form>
                 {% endif %}
-                <a class="btn btn-outline-success btn-sm"
+                <a class="btn btn-outline-success btn"
                    href="{% url 'django_registration_register' %}"
                    type="submit">Rejestracja
                 </a>

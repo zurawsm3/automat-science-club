@@ -15,7 +15,8 @@
             nisi. Nulla facilisi. Praesent luctus auctor elit, vulputate porttitor neque.
       </p>
       {% if not request.user.is_authenticated %}
-      <a class="btn btn-block btn-outline-secondary" href="{% url 'django_registration_register' %}" role="button">Dołącz do nas! &darr; &darr;</a>
+      <a class="btn btn-block btn-outline-secondary" href="{% url 'django_registration_register' %}"
+         role="button">Dołącz do nas! &darr; &darr;</a>
       {% endif %}
       <picture>
         <img class="img-fluid mt-3 mb-2"  src="{% static 'img/ekipa.jpg' %}" alt="ekipa">

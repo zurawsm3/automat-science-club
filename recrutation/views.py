@@ -3,7 +3,7 @@ from .forms import RecruitmentForm
 from .models import Recruiter
 
 
-def recrutation_view(request):
+def recruitment_view(request):
     form = RecruitmentForm(request.POST or None)
     context = {
         "title": "Formularz zgłoszeniowy",
@@ -23,20 +23,6 @@ def thanks_view(request):
 
 
 def members_view(request):
-    # title = "Rekrutacja"
-    # form = SignUpForm(request.POST or None)
-    #
-    # context = {
-    #     "title": title,
-    #     "form": form,
-    # }
-    # if form.is_valid():
-    #     form.save()
-    #     context = {
-    #         "title": "Dziekujemy"
-    #     }
-    # if request.user.is_authenticated() :
-
     context = {
         "queryset": Recruiter.objects.filter(status='a')
     }
