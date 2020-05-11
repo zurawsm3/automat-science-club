@@ -1,73 +1,46 @@
 {%  extends "base.html" %}
 {% load static %}
 
-{#{% block jumbotron %}#}
-{#    <main role="main" class="container">#}
-{#      <div class="jumbotron">#}
-{#        <h1>Navbar example</h1>#}
-{#        <p class="lead">This example is a quick exercise to illustrate how the top-aligned navbar works. As you scroll, this navbar remains in its original position and moves with the rest of the page.</p>#}
-{#        <a class="btn btn-lg btn-primary" href="../../components/navbar/" role="button">View navbar docs &raquo;</a>#}
-{#      </div>#}
-{#    </main>#}
-{#{% endblock %}#}
-
-
-
-
-
 {% block content %}
 <div class="jumbotron mb-0">
-    <div class="container">
+  <div class="container">
     <div class="row">
-{#        <div class='col-sm-6'>#}
-            <h1>Koło Naukowe Automat</h1>
-            <p class='text-align-center' >
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum vestibulum arcu id pellentesque
-                pellentesque. Cras ut dignissim mi, vel rhoncus ligula. Quisque imperdiet commodo nulla, eu varius
-                tellus dignissim sit amet. Interdum et malesuada fames ac ante ipsum primis in faucibus. Fusce posuere
-                nibh vitae ante interdum semper. Suspendisse nisl est, finibus tempus felis vel, vestibulum pellentesque
-                enim. Pellentesque lacinia porttitor mauris, eget condimentum est hendrerit ornare. Donec et rhoncus
-                nisi. Nulla facilisi. Praesent luctus auctor elit, vulputate porttitor neque.
-            </p>
-              <a class="btn btn-block btn-outline-secondary" href="{% url 'django_registration_register' %}" role="button">Dołącz do nas! &darr; &darr;</a>
-            <picture>
-{#            <img  width="500" height="500" class="img-fluid"  src="{% static 'img/ekipa.jpg' %}" alt="ekipa">#}
-            <img class="img-fluid mt-3 mb-2"  src="{% static 'img/ekipa.jpg' %}" alt="ekipa">
-                </picture>
-        </div>
-{#        <div class='col-sm-6' >#}
-{##}
-{#        </div>#}
+      <h1>Koło Naukowe Automat</h1>
+      <p class='text-align-center' >
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum vestibulum arcu id pellentesque
+            pellentesque. Cras ut dignissim mi, vel rhoncus ligula. Quisque imperdiet commodo nulla, eu varius
+            tellus dignissim sit amet. Interdum et malesuada fames ac ante ipsum primis in faucibus. Fusce posuere
+            nibh vitae ante interdum semper. Suspendisse nisl est, finibus tempus felis vel, vestibulum pellentesque
+            enim. Pellentesque lacinia porttitor mauris, eget condimentum est hendrerit ornare. Donec et rhoncus
+            nisi. Nulla facilisi. Praesent luctus auctor elit, vulputate porttitor neque.
+      </p>
+      {% if not request.user.is_authenticated %}
+      <a class="btn btn-block btn-outline-secondary" href="{% url 'django_registration_register' %}" role="button">Dołącz do nas! &darr; &darr;</a>
+      {% endif %}
+      <picture>
+        <img class="img-fluid mt-3 mb-2"  src="{% static 'img/ekipa.jpg' %}" alt="ekipa">
+      </picture>
     </div>
-{#    </div>#}
+  </div>
 </div>
-
-
-
-
-
-    <div class="container">
-    <div class="row align-content-center" style="font-size: 29px; color: #606060; text-align: center;">
-        <div class='col-sm-3'  >
-        <p class='lead text-align-center mt-5'>Wydział Elektryczny</p>
-            <img width="135" height="145" src="{%static 'img/ee.jpeg' %}" class='img-responsive'/>
-        </div>
-
-        <div class='col-sm-3' >
-        <p class='lead text-align-center mt-5'>Wysoko wyposażony</p>
-        <i class="fa fa-cubes fa-5x" aria-hidden="true"    ></i>
-        </div>
-
-        <div class='col-sm-3'>
-        <p class='lead text-align-center mt-5'>Zawsze nagradzany</p>
-        <i class="fa fa-medal fa-5x "  aria-hidden="true" ></i>
-        </div>
-
-        <div class='col-sm-3'>
-        <p class='lead text-align-center mt-5'>Z przyjazną atmosferą</p>
-        <i class="fa fa-smile-o fa-5x "  aria-hidden="true" ></i>
-        </div>
+<div class="container">
+  <div class="row align-content-center" style="font-size: 29px; color: #606060; text-align: center;">
+    <div class='col-sm-3'  >
+      <p class='lead text-align-center mt-5'>Wydział Elektryczny</p>
+      <img width="135" height="145" src="{%static 'img/ee.jpeg' %}" class='img-responsive' alt="elektryczny"/>
     </div>
+    <div class='col-sm-3' >
+      <p class='lead text-align-center mt-5'>Wysoko wyposażony</p>
+      <i class="fa fa-cubes fa-5x" aria-hidden="true"    ></i>
+    </div>
+    <div class='col-sm-3'>
+      <p class='lead text-align-center mt-5'>Zawsze nagradzany</p>
+      <i class="fa fa-medal fa-5x "  aria-hidden="true" ></i>
+    </div>
+    <div class='col-sm-3'>
+      <p class='lead text-align-center mt-5'>Z przyjazną atmosferą</p>
+      <i class="fa fa-smile-o fa-5x "  aria-hidden="true" ></i>
+    </div>
+  </div>
 </div>
-
 {% endblock %}
