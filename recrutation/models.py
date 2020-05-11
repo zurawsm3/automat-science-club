@@ -7,7 +7,7 @@ STATUS_CHOICES = (
 )
 
 
-class RecruitmentModel(models.Model):
+class Recruiter(models.Model):
     email = models.EmailField()
     full_name = models.CharField(max_length=120, null=False)
     timestamp = models.DateTimeField(auto_now_add=True, auto_now=False)

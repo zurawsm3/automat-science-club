@@ -23,5 +23,5 @@ urlpatterns = [
     path('konta/', include('auth_members.urls')),
     path('o-nas/', about_us_view),
     path('kontakt/', contact_view),
-    path('rekrutacja/', include('recrutation.urls'))
+    path('rekrutacja/', include('recrutation.urls')),
 ]

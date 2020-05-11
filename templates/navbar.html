@@ -25,7 +25,9 @@
                 </li>
                 {% if request.user.is_authenticated %}
                 <li class="nav-item active">
-{#                    <a class="nav-link" href="{% url 'recrutation' %}"><u>Rekrutacja</u></a>#}
+                    <a class="nav-link" href="/rekrutacja/czlonkowie/">Członkowie</a>
+                </li>
+                <li class="nav-item active">
                     <a class="nav-link" href="/rekrutacja/"><u>Rekrutacja</u></a>
                 </li>
                 {% endif %}

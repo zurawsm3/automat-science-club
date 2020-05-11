@@ -1,5 +1,5 @@
 from django import forms
-from .models import RecruitmentModel
+from .models import Recruiter
 
 
 class RecruitmentForm(forms.ModelForm):
@@ -7,7 +7,7 @@ class RecruitmentForm(forms.ModelForm):
     full_name = forms.CharField(label="Imię i nazwisko")
 
     class Meta:
-        model = RecruitmentModel
+        model = Recruiter
         fields = ['full_name', 'email', 'presentation']
 
     def clean_email(self):

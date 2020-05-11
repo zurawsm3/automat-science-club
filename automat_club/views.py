@@ -4,14 +4,6 @@ from django.core.mail import send_mail
 from django.conf import settings
 
 
-def home_view(request):
-    return render(request, 'home.html')
-
-
-def about_us_view(request):
-    return render(request, 'about_us.html')
-
-
 def contact_view(request):
     form = ContactForm(request.POST or None)
     if form.is_valid():
@@ -31,3 +23,11 @@ def contact_view(request):
         "form": form,
     }
     return render(request, "contact.html", context)
+
+
+def home_view(request):
+    return render(request, 'home.html')
+
+
+def about_us_view(request):
+    return render(request, 'about_us.html')

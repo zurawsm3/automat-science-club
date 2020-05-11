@@ -1,0 +1,13 @@
+{%  extends "base.html" %}
+{% load static %}
+
+
+{% block content %}
+<h2>Lista członków Koła Naukowego Automat:</h2>
+<table class='table'>
+<tr><td>Numer</td><td>Imie i nazwisko</td><td> E-mail </td><td> Czas wstąpienia </td></tr>
+{% for instance in queryset %}
+    <tr><td>{{forloop.counter}}</td><td>{{ instance.full_name }},</td><td> {{ instance}} </td><td> {{ instance.timestamp|timesince }} ago </td></tr>
+{% endfor %}
+</table>
+{% endblock %}
